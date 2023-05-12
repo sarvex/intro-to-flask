@@ -6,7 +6,7 @@ app.config['SECRET_KEY'] = 'top secret!'
 
 @app.before_request
 def before_request():
-    if not 'count' in session:
+    if 'count' not in session:
         session['count'] = 1
     else:
         session['count'] += 1

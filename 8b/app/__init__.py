@@ -15,7 +15,7 @@ def create_app(config_name):
     app = Flask(__name__)
 
     # import configuration
-    cfg = os.path.join(os.getcwd(), 'config', config_name + '.py')
+    cfg = os.path.join(os.getcwd(), 'config', f'{config_name}.py')
     app.config.from_pyfile(cfg)
 
     # initialize extensions

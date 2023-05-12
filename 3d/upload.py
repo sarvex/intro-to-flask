@@ -26,7 +26,7 @@ def index():
     image = None
     form = UploadForm()
     if form.validate_on_submit():
-        image = 'uploads/' + form.image_file.data.filename
+        image = f'uploads/{form.image_file.data.filename}'
         form.image_file.data.save(os.path.join(app.static_folder, image))
     return render_template('index.html', form=form, image=image)
 
